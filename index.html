@@ -1,13 +1,19 @@
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Projeto G1 — Análise de Queimadas no Brasil</title>
+  <title>Projeto G1 | Análise de Queimadas no Brasil</title>
 
   <style>
+
+    /* =========================
+       CONFIGURAÇÕES GERAIS
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -16,412 +22,618 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, #3b1d0f 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #35140c 0%, transparent 30%),
-        #0f1115;
-      color: #f5f5f5;
-      min-height: 100vh;
+      background: #f5f6f8;
+      color: #222;
       line-height: 1.6;
     }
 
-    /* CONTAINER */
-
     .container {
       width: 90%;
-      max-width: 1150px;
+      max-width: 1100px;
       margin: auto;
     }
 
-    /* HEADER */
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
 
     header {
-      padding: 70px 0 50px;
+      background: linear-gradient(135deg, #1b1b1b, #292929);
+      color: white;
+      padding: 70px 20px;
       text-align: center;
     }
 
-    .badge {
+    .tag {
       display: inline-block;
-      padding: 8px 16px;
-      border-radius: 50px;
-      background: rgba(255, 98, 0, 0.12);
-      border: 1px solid rgba(255, 98, 0, 0.35);
-      color: #ff8a3d;
-      font-size: 14px;
+      background: #ff6b1a;
+      color: white;
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 13px;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
       margin-bottom: 15px;
-      background: linear-gradient(90deg, #ffb347, #ff5e00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
-    header p {
-      color: #b8b8b8;
-      font-size: 1.05rem;
+    header h1 span {
+      color: #ff7425;
     }
 
-    .professor {
-      margin-top: 8px;
-      color: #888;
+    header .subtitle {
+      color: #d0d0d0;
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: auto;
     }
 
-    /* HERO */
-
-    .hero {
-      background: linear-gradient(
-        135deg,
-        rgba(255, 94, 0, 0.15),
-        rgba(255, 179, 71, 0.04)
-      );
-
-      border: 1px solid rgba(255, 120, 40, 0.2);
-      border-radius: 24px;
-      padding: 40px;
-      margin-bottom: 25px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    .student {
+      margin-top: 25px;
+      color: #aaa;
+      font-size: 14px;
     }
 
-    .hero h2 {
+
+    /* =========================
+       CONTEÚDO
+    ========================= */
+
+    main {
+      padding: 45px 0;
+    }
+
+    .section {
+      margin-bottom: 35px;
+    }
+
+    .section-title {
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
       font-size: 1.7rem;
-      margin-bottom: 12px;
+      color: #222;
     }
 
-    .hero p {
-      color: #c9c9c9;
-      max-width: 850px;
+    .section-title p {
+      color: #777;
+      font-size: 14px;
+      margin-top: 3px;
     }
 
-    /* CARDS */
 
-    .card {
-      background: rgba(25, 27, 32, 0.85);
-      border: 1px solid #292c33;
-      border-radius: 20px;
+    /* =========================
+       OBJETIVO
+    ========================= */
+
+    .objective {
+      background: white;
+      border-radius: 16px;
       padding: 30px;
-      margin: 25px 0;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-      backdrop-filter: blur(10px);
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
     }
 
-    .card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+    .objective-content {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
     }
 
-    /* KPIs */
+    .objective-icon {
+      min-width: 50px;
+      height: 50px;
+      background: #fff0e8;
+      color: #ff6415;
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 24px;
+    }
+
+    .objective p {
+      color: #555;
+      margin-top: 5px;
+    }
+
+
+    /* =========================
+       INDICADORES
+    ========================= */
 
     .kpis {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .kpi {
-      padding: 22px;
+      background: white;
+      border: 1px solid #e5e5e5;
       border-radius: 16px;
-      background: linear-gradient(
-        145deg,
-        #20232a,
-        #181a1f
-      );
-      border: 1px solid #30343c;
-      transition: 0.3s;
+      padding: 25px;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+
+      transition: transform 0.2s ease,
+                  box-shadow 0.2s ease;
     }
 
     .kpi:hover {
-      transform: translateY(-5px);
-      border-color: #ff6b1a;
-      box-shadow: 0 10px 30px rgba(255, 94, 0, 0.12);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
-    .kpi strong {
-      display: block;
-      font-size: 1.6rem;
-      color: #ff8a3d;
-      margin-bottom: 5px;
+    .kpi-label {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 8px;
     }
 
-    .kpi span {
-      color: #aaa;
-      font-size: 0.95rem;
+    .kpi-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #222;
     }
 
-    /* TECNOLOGIAS */
+    .kpi-value.orange {
+      color: #f15b16;
+    }
+
+
+    /* =========================
+       TECNOLOGIAS
+    ========================= */
+
+    .technologies {
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 30px;
+    }
 
     .tech-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     .tech {
-      padding: 9px 15px;
-      border-radius: 50px;
-      background: #23262d;
-      border: 1px solid #343841;
-      color: #ddd;
+      background: #f6f6f6;
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+
+      padding: 10px 17px;
+
       font-size: 14px;
-      transition: 0.3s;
+      font-weight: bold;
+      color: #444;
     }
 
-    .tech:hover {
-      background: #ff5e00;
-      border-color: #ff5e00;
-      color: white;
-      transform: translateY(-2px);
-    }
 
-    /* DASHBOARD */
+    /* =========================
+       DASHBOARD
+    ========================= */
 
     .dashboard {
-      text-align: center;
+      background: linear-gradient(
+        135deg,
+        #ff6415,
+        #e94b00
+      );
+
+      color: white;
+      border-radius: 18px;
       padding: 40px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 94, 0, 0.15),
-          rgba(255, 179, 71, 0.05)
-        );
+      text-align: center;
+
+      box-shadow: 0 12px 30px rgba(230, 80, 0, 0.2);
+    }
+
+    .dashboard h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
 
     .dashboard p {
-      color: #bbb;
       max-width: 650px;
       margin: 0 auto 25px;
+      color: #fff1e9;
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 22px;
-      background: linear-gradient(135deg, #ff6a00, #ff3d00);
-      color: white;
+      display: inline-block;
+
+      background: white;
+      color: #e9510a;
+
+      padding: 12px 22px;
+
+      border-radius: 9px;
+
       text-decoration: none;
-      border-radius: 10px;
+
       font-weight: bold;
-      transition: 0.3s;
-      box-shadow: 0 8px 25px rgba(255, 80, 0, 0.25);
+
+      transition: 0.2s;
     }
 
     .button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(255, 80, 0, 0.4);
+      transform: translateY(-2px);
+      background: #fff8f4;
     }
 
-    /* OBSERVAÇÃO */
 
-    .observation {
-      border-left: 4px solid #ff6a00;
+    /* =========================
+       OBSERVAÇÃO
+    ========================= */
+
+    .notice {
+      background: #fffaf5;
+      border-left: 4px solid #ff6415;
+
+      padding: 22px;
+
+      border-radius: 10px;
+
+      color: #666;
     }
 
-    .observation p {
-      color: #aaa;
+    .notice strong {
+      color: #333;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
+      background: #1c1c1c;
+      color: #999;
+
       text-align: center;
-      padding: 40px 20px;
-      color: #666;
+
+      padding: 30px 20px;
+
       font-size: 14px;
     }
 
     footer strong {
-      color: #999;
+      color: #ddd;
     }
 
-    /* RESPONSIVO */
 
-    @media (max-width: 600px) {
+    /* =========================
+       RESPONSIVIDADE
+    ========================= */
 
-      header {
-        padding: 45px 0 30px;
+    @media (max-width: 800px) {
+
+      .kpis {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .hero,
-      .card {
-        padding: 22px;
+    }
+
+
+    @media (max-width: 550px) {
+
+      header {
+        padding: 50px 15px;
       }
 
       .kpis {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
-      .kpi strong {
-        font-size: 1.3rem;
+      .objective-content {
+        flex-direction: column;
       }
+
+      .dashboard {
+        padding: 30px 20px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <div class="container">
 
-    <!-- CABEÇALHO -->
+  <!-- =========================
+       CABEÇALHO
+  ========================== -->
 
-    <header>
+  <header>
 
-      <div class="badge">
-        🔥 PROJETO G1 · TEMA 3
-      </div>
+    <div class="tag">
+      PROJETO G1 · TEMA 3
+    </div>
 
-      <h1>Análise de Queimadas no Brasil</h1>
+    <h1>
+      🔥 Análise de <span>Queimadas</span> no Brasil
+    </h1>
 
-      <p>
-        Uma análise exploratória dos focos de queimadas
-        entre 2015 e 2024.
-      </p>
+    <p class="subtitle">
+      Análise dos focos de queimadas no Brasil entre
+      2015 e 2024, identificando padrões regionais,
+      sazonalidade e períodos críticos.
+    </p>
 
-      <p class="professor">
-        Linguagens de Programação · Professor Alexandre Neves Louzada
-      </p>
+    <p class="student">
+      Linguagens de Programação · Professor Alexandre Neves Louzada
+      <br>
+      Aluno: <strong>Luis Fernando Dantas Carvalho</strong>
+    </p>
 
-      <p class="professor">
-        Desenvolvido por <strong>Luis Fernando Dantas Carvalho</strong>
-      </p>
-
-    </header>
-
-
-    <!-- OBJETIVO -->
-
-    <section class="hero">
-
-      <h2>🎯 Objetivo do Projeto</h2>
-
-      <p>
-        Investigar a evolução dos focos de queimadas no Brasil entre
-        2015 e 2024, identificando padrões regionais, sazonalidade,
-        biomas e períodos críticos.
-      </p>
-
-    </section>
+  </header>
 
 
-    <!-- RESULTADOS -->
+  <!-- =========================
+       CONTEÚDO
+  ========================== -->
 
-    <section class="card">
+  <main>
 
-      <h2>📊 Principais Resultados</h2>
+    <div class="container">
 
-      <div class="kpis">
 
-        <div class="kpi">
-          <strong>61.803</strong>
-          <span>Focos registrados</span>
+      <!-- OBJETIVO -->
+
+      <section class="section">
+
+        <div class="section-title">
+          <h2>🎯 Sobre o projeto</h2>
+          <p>Entenda o objetivo da análise</p>
         </div>
 
-        <div class="kpi">
-          <strong>24.874,64</strong>
-          <span>km² de área atingida</span>
+        <div class="objective">
+
+          <div class="objective-content">
+
+            <div class="objective-icon">
+              🔥
+            </div>
+
+            <div>
+
+              <h3>Objetivo</h3>
+
+              <p>
+                Investigar a evolução dos focos de queimadas
+                no Brasil entre 2015 e 2024, identificando
+                padrões regionais, sazonalidade, biomas e
+                períodos críticos.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="kpi">
-          <strong>GO</strong>
-          <span>Estado líder</span>
+      </section>
+
+
+      <!-- RESULTADOS -->
+
+      <section class="section">
+
+        <div class="section-title">
+          <h2>📊 Principais resultados</h2>
+          <p>Resumo dos dados analisados</p>
         </div>
 
-        <div class="kpi">
-          <strong>Nordeste</strong>
-          <span>Região líder</span>
+
+        <div class="kpis">
+
+
+          <div class="kpi">
+
+            <div class="kpi-label">
+              🔥 Focos registrados
+            </div>
+
+            <div class="kpi-value orange">
+              61.803
+            </div>
+
+          </div>
+
+
+          <div class="kpi">
+
+            <div class="kpi-label">
+              🌳 Área atingida
+            </div>
+
+            <div class="kpi-value">
+              24.874,64 km²
+            </div>
+
+          </div>
+
+
+          <div class="kpi">
+
+            <div class="kpi-label">
+              📍 Estado líder
+            </div>
+
+            <div class="kpi-value orange">
+              GO
+            </div>
+
+          </div>
+
+
+          <div class="kpi">
+
+            <div class="kpi-label">
+              🗺️ Região líder
+            </div>
+
+            <div class="kpi-value">
+              Nordeste
+            </div>
+
+          </div>
+
+
+          <div class="kpi">
+
+            <div class="kpi-label">
+              📅 Mês crítico
+            </div>
+
+            <div class="kpi-value orange">
+              Outubro
+            </div>
+
+          </div>
+
+
+          <div class="kpi">
+
+            <div class="kpi-label">
+              📈 Correlação seca × focos
+            </div>
+
+            <div class="kpi-value">
+              0,815
+            </div>
+
+          </div>
+
+
         </div>
 
-        <div class="kpi">
-          <strong>Outubro</strong>
-          <span>Mês crítico</span>
+      </section>
+
+
+      <!-- TECNOLOGIAS -->
+
+      <section class="section">
+
+        <div class="section-title">
+          <h2>💻 Tecnologias utilizadas</h2>
+          <p>Ferramentas utilizadas no desenvolvimento</p>
         </div>
 
-        <div class="kpi">
-          <strong>0,815</strong>
-          <span>Correlação seca × focos</span>
+
+        <div class="technologies">
+
+          <div class="tech-list">
+
+            <div class="tech">
+              🐍 Python
+            </div>
+
+            <div class="tech">
+              🐼 Pandas
+            </div>
+
+            <div class="tech">
+              📊 Plotly
+            </div>
+
+            <div class="tech">
+              🌐 Streamlit
+            </div>
+
+            <div class="tech">
+              🔧 GitHub
+            </div>
+
+          </div>
+
         </div>
 
-      </div>
-
-    </section>
+      </section>
 
 
-    <!-- TECNOLOGIAS -->
+      <!-- DASHBOARD -->
 
-    <section class="card">
+      <section class="section">
 
-      <h2>💻 Tecnologias Utilizadas</h2>
+        <div class="dashboard">
 
-      <div class="tech-list">
+          <h2>
+            📈 Explore os dados
+          </h2>
 
-        <div class="tech">🐍 Python</div>
-        <div class="tech">🐼 Pandas</div>
-        <div class="tech">📊 Plotly</div>
-        <div class="tech">🌐 Streamlit</div>
-        <div class="tech">🔧 GitHub</div>
+          <p>
+            Acesse o dashboard interativo para visualizar
+            gráficos e informações detalhadas sobre as
+            queimadas no Brasil.
+          </p>
 
-      </div>
+          <a
+            class="button"
+            href="https://queimadas-brasil-g1.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🚀 Abrir Dashboard
+          </a>
 
-    </section>
+        </div>
 
-
-    <!-- DASHBOARD -->
-
-    <section class="card dashboard">
-
-      <h2>📈 Dashboard Interativo</h2>
-
-      <p>
-        Explore os dados do projeto através do dashboard interativo,
-        com gráficos e análises sobre a distribuição das queimadas
-        no Brasil.
-      </p>
-
-      <a
-        class="button"
-        href="https://queimadas-brasil-g1.streamlit.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        🚀 Abrir Dashboard
-      </a>
-
-    </section>
+      </section>
 
 
-    <!-- OBSERVAÇÃO -->
+      <!-- OBSERVAÇÃO -->
 
-    <section class="card observation">
+      <section class="section">
 
-      <h2>📌 Observação</h2>
+        <div class="notice">
 
-      <p>
-        Os dados utilizados neste projeto são simulados e foram
-        fornecidos para fins acadêmicos.
-      </p>
+          <strong>📌 Observação:</strong>
 
-    </section>
+          Os dados utilizados neste projeto são simulados
+          e foram fornecidos para fins acadêmicos.
+
+        </div>
+
+      </section>
 
 
-    <!-- RODAPÉ -->
+    </div>
 
-    <footer>
+  </main>
 
-      <p>
-        Projeto G1 — Análise de Queimadas no Brasil
-      </p>
 
-      <p>
-        <strong>Linguagens de Programação</strong> · 2026
-      </p>
+  <!-- =========================
+       RODAPÉ
+  ========================== -->
 
-    </footer>
+  <footer>
 
-  </div>
+    <p>
+      Projeto G1 — Análise de Queimadas no Brasil
+    </p>
+
+    <p>
+      <strong>Linguagens de Programação</strong> · 2026
+    </p>
+
+  </footer>
+
 
 </body>
+
 </html>
 ```
