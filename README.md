@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projeto G2 — Tema 3: Análise de Queimadas no Brasil
 
 Projeto de análise e visualização de dados desenvolvido com **Python, Pandas, Plotly e Streamlit**, conforme as exigências do enunciado.
@@ -166,3 +167,7 @@ Uma apresentação curta pode seguir esta ordem:
 9. Conclusão;
 10. Demonstração dos filtros do dashboard.
 
+=======
+# Analise-de-queimadas-no-Brasil
+Tema 3 — Análise de Queimadas no Brasil
+>>>>>>> 671e726646c9fd8968a4ce70090c5f89670dac04
