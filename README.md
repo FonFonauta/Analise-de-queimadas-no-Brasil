@@ -115,7 +115,7 @@ Depois:
 ```bash
 git init
 git add .
-git commit -m "Projeto G2 - análise de queimadas"
+git commit -m "Projeto G1 - análise de queimadas"
 git branch -M main
 git remote add origin https://github.com/SEU-USUARIO/projeto-queimadas-brasil.git
 git push -u origin main

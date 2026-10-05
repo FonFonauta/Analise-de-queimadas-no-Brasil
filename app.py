@@ -175,4 +175,4 @@ st.write(
     "interpretadas como exercício analítico, e não como retrato oficial das queimadas no Brasil."
 )
 
-st.caption("Projeto G2 — Tema 3 | Python + Pandas + Plotly + Streamlit")
+st.caption("Projeto G1 — Tema 3 | Python + Pandas + Plotly + Streamlit")
