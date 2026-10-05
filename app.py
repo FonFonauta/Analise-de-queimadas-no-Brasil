@@ -25,13 +25,11 @@ st.markdown(
     "com análise temporal, regional, estadual, por bioma, sazonalidade e risco."
 )
 st.markdown(
-    "Linguagens de Programação "
-)
-st.markdown(
-    "Professor: Alexandre Neves Louzada "
-)
-st.markdown(
-    "Aluno: Luis Fernando Dantas Carvalho "
+    """
+    *📚 Disciplina:* Linguagens de Programação  
+    *👨‍🏫 Professor:* Alexandre Neves Louzada  
+    *👨‍🎓 Aluno:* Luis Fernando Dantas Carvalho
+    """
 )
 with st.sidebar:
     st.header("Filtros")
