@@ -30,7 +30,7 @@ st.markdown(
 st.markdown(
     "Professor: Alexandre Neves Louzada "
 )
-    st.markdown(
+st.markdown(
     "Aluno: Luis Fernando Dantas Carvalho "
 )
 with st.sidebar:
