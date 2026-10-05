@@ -10,9 +10,9 @@
 
   <style>
 
-    /* =========================
+    /* =========================================
        CONFIGURAÇÕES GERAIS
-    ========================= */
+    ========================================= */
 
     * {
       margin: 0;
@@ -20,10 +20,36 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f6f8;
+
+      /*
+        Fundo inspirado em natureza:
+        verde muito suave + bege.
+        O laranja aparece apenas como detalhe.
+      */
+
+      background:
+        radial-gradient(
+          circle at 10% 15%,
+          rgba(76, 110, 75, 0.12),
+          transparent 35%
+        ),
+
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(217, 119, 6, 0.07),
+          transparent 35%
+        ),
+
+        #f3f5f1;
+
       color: #222;
+
       line-height: 1.6;
     }
 
@@ -34,228 +60,495 @@
     }
 
 
-    /* =========================
+    /* =========================================
        CABEÇALHO
-    ========================= */
+    ========================================= */
 
     header {
-      background: linear-gradient(135deg, #1b1b1b, #292929);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(28, 55, 39, 0.98),
+          rgba(43, 62, 47, 0.96)
+        );
+
       color: white;
-      padding: 70px 20px;
+
+      padding: 75px 20px 70px;
+
       text-align: center;
+
+      border-bottom: 4px solid #c65d0a;
+
+      position: relative;
+
+      overflow: hidden;
     }
+
+
+    /*
+      Pequeno detalhe decorativo no fundo.
+      É propositalmente discreto.
+    */
+
+    header::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.025);
+
+      top: -180px;
+      left: -100px;
+    }
+
+
+    header::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      border-radius: 50%;
+
+      background: rgba(217, 119, 6, 0.04);
+
+      bottom: -180px;
+      right: -80px;
+    }
+
+
+    header > * {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* TAG */
 
     .tag {
+
       display: inline-block;
-      background: #ff6b1a;
-      color: white;
-      padding: 7px 16px;
+
+      background: rgba(217, 119, 6, 0.15);
+
+      border: 1px solid rgba(217, 119, 6, 0.45);
+
+      color: #f0a15b;
+
+      padding: 7px 17px;
+
       border-radius: 30px;
+
       font-size: 13px;
+
       font-weight: bold;
-      margin-bottom: 20px;
+
+      letter-spacing: 0.5px;
+
+      margin-bottom: 22px;
     }
+
+
+    /* TÍTULO */
 
     header h1 {
+
       font-size: clamp(2.2rem, 5vw, 3.8rem);
-      margin-bottom: 15px;
+
+      line-height: 1.15;
+
+      margin-bottom: 18px;
+
+      font-weight: 700;
     }
+
 
     header h1 span {
-      color: #ff7425;
+
+      color: #e37a2a;
     }
 
+
+    /* SUBTÍTULO */
+
     header .subtitle {
-      color: #d0d0d0;
-      font-size: 1.1rem;
-      max-width: 650px;
+
+      color: #d9dfda;
+
+      font-size: 1.08rem;
+
+      max-width: 680px;
+
       margin: auto;
     }
 
+
+    /* INFORMAÇÕES DO ALUNO */
+
     .student {
-      margin-top: 25px;
-      color: #aaa;
+
+      margin-top: 27px;
+
+      color: #aeb9b1;
+
       font-size: 14px;
+
+      line-height: 1.8;
     }
 
 
-    /* =========================
-       CONTEÚDO
-    ========================= */
+    .student strong {
+
+      color: #e5ebe6;
+    }
+
+
+    /* =========================================
+       CONTEÚDO PRINCIPAL
+    ========================================= */
 
     main {
-      padding: 45px 0;
+
+      padding: 55px 0;
     }
+
 
     .section {
-      margin-bottom: 35px;
+
+      margin-bottom: 42px;
     }
+
+
+    /* TÍTULO DAS SEÇÕES */
 
     .section-title {
-      margin-bottom: 18px;
+
+      margin-bottom: 20px;
     }
+
 
     .section-title h2 {
-      font-size: 1.7rem;
-      color: #222;
+
+      font-size: 1.65rem;
+
+      color: #263b2d;
+
+      margin-bottom: 3px;
     }
+
 
     .section-title p {
-      color: #777;
+
+      color: #737b75;
+
       font-size: 14px;
-      margin-top: 3px;
     }
 
 
-    /* =========================
+    /* =========================================
        OBJETIVO
-    ========================= */
+    ========================================= */
 
     .objective {
-      background: white;
+
+      background: rgba(255, 255, 255, 0.92);
+
+      border: 1px solid #e0e5df;
+
       border-radius: 16px;
+
       padding: 30px;
-      border: 1px solid #e5e5e5;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+
+      box-shadow:
+        0 5px 20px rgba(30, 50, 35, 0.05);
     }
 
+
     .objective-content {
+
       display: flex;
+
       gap: 22px;
+
       align-items: flex-start;
     }
 
+
     .objective-icon {
-      min-width: 50px;
-      height: 50px;
-      background: #fff0e8;
-      color: #ff6415;
+
+      min-width: 52px;
+
+      height: 52px;
+
+      background: #edf3ed;
+
+      color: #285943;
+
       border-radius: 12px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       font-size: 24px;
     }
 
-    .objective p {
-      color: #555;
-      margin-top: 5px;
+
+    .objective h3 {
+
+      color: #285943;
+
+      margin-bottom: 5px;
     }
 
 
-    /* =========================
+    .objective p {
+
+      color: #5f6661;
+
+      max-width: 850px;
+    }
+
+
+    /* =========================================
        INDICADORES
-    ========================= */
+    ========================================= */
 
     .kpis {
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 18px;
     }
 
+
     .kpi {
-      background: white;
-      border: 1px solid #e5e5e5;
+
+      background: rgba(255, 255, 255, 0.95);
+
+      border: 1px solid #e0e5df;
+
       border-radius: 16px;
+
       padding: 25px;
 
-      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+      min-height: 125px;
 
-      transition: transform 0.2s ease,
-                  box-shadow 0.2s ease;
+      box-shadow:
+        0 5px 20px rgba(30, 50, 35, 0.05);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
     }
+
 
     .kpi:hover {
+
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+      border-color: #cbd8cd;
+
+      box-shadow:
+        0 10px 25px rgba(30, 50, 35, 0.09);
     }
 
+
     .kpi-label {
-      color: #777;
+
+      color: #737b75;
+
       font-size: 14px;
+
       margin-bottom: 8px;
     }
 
+
     .kpi-value {
-      font-size: 1.8rem;
+
+      font-size: 1.75rem;
+
       font-weight: bold;
-      color: #222;
+
+      color: #285943;
     }
+
+
+    /*
+      Laranja somente nos destaques.
+    */
 
     .kpi-value.orange {
-      color: #f15b16;
+
+      color: #c65d0a;
     }
 
 
-    /* =========================
+    /* =========================================
        TECNOLOGIAS
-    ========================= */
+    ========================================= */
 
     .technologies {
-      background: white;
-      border: 1px solid #e5e5e5;
+
+      background: rgba(255, 255, 255, 0.92);
+
+      border: 1px solid #e0e5df;
+
       border-radius: 16px;
+
       padding: 30px;
+
+      box-shadow:
+        0 5px 20px rgba(30, 50, 35, 0.05);
     }
 
+
     .tech-list {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 12px;
     }
 
+
     .tech {
-      background: #f6f6f6;
-      border: 1px solid #e2e2e2;
+
+      background: #f1f4f1;
+
+      border: 1px solid #dce3dc;
+
       border-radius: 10px;
 
       padding: 10px 17px;
 
       font-size: 14px;
+
       font-weight: bold;
-      color: #444;
+
+      color: #405047;
+
+      transition: 0.2s;
     }
 
 
-    /* =========================
+    .tech:hover {
+
+      background: #e6eee7;
+
+      border-color: #c7d7ca;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================================
        DASHBOARD
-    ========================= */
+    ========================================= */
 
     .dashboard {
-      background: linear-gradient(
-        135deg,
-        #ff6415,
-        #e94b00
-      );
+
+      background:
+        linear-gradient(
+          135deg,
+          #285943,
+          #214a36
+        );
 
       color: white;
+
       border-radius: 18px;
-      padding: 40px;
+
+      padding: 45px 30px;
+
       text-align: center;
 
-      box-shadow: 0 12px 30px rgba(230, 80, 0, 0.2);
+      box-shadow:
+        0 12px 30px rgba(30, 70, 45, 0.18);
+
+      position: relative;
+
+      overflow: hidden;
     }
 
+
+    /*
+      Brilho extremamente discreto.
+    */
+
+    .dashboard::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.035);
+
+      right: -120px;
+      bottom: -170px;
+    }
+
+
+    .dashboard > * {
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
     .dashboard h2 {
+
       font-size: 1.8rem;
+
       margin-bottom: 10px;
     }
 
+
     .dashboard p {
+
       max-width: 650px;
-      margin: 0 auto 25px;
-      color: #fff1e9;
+
+      margin: 0 auto 26px;
+
+      color: #dbe7de;
     }
 
+
+    /* BOTÃO */
+
     .button {
+
       display: inline-block;
 
-      background: white;
-      color: #e9510a;
+      background: #ffffff;
 
-      padding: 12px 22px;
+      color: #285943;
+
+      padding: 13px 24px;
 
       border-radius: 9px;
 
@@ -264,62 +557,85 @@
       font-weight: bold;
 
       transition: 0.2s;
+
+      box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
     }
+
 
     .button:hover {
+
       transform: translateY(-2px);
-      background: #fff8f4;
+
+      background: #f4f7f4;
+
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.16);
     }
 
 
-    /* =========================
+    /* =========================================
        OBSERVAÇÃO
-    ========================= */
+    ========================================= */
 
     .notice {
+
       background: #fffaf5;
-      border-left: 4px solid #ff6415;
+
+      border: 1px solid #f1e2d3;
+
+      border-left: 4px solid #c65d0a;
 
       padding: 22px;
 
       border-radius: 10px;
 
       color: #666;
-    }
-
-    .notice strong {
-      color: #333;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #1c1c1c;
-      color: #999;
-
-      text-align: center;
-
-      padding: 30px 20px;
 
       font-size: 14px;
     }
 
-    footer strong {
-      color: #ddd;
+
+    .notice strong {
+
+      color: #333;
     }
 
 
-    /* =========================
-       RESPONSIVIDADE
-    ========================= */
+    /* =========================================
+       RODAPÉ
+    ========================================= */
 
-    @media (max-width: 800px) {
+    footer {
+
+      background: #1d2a22;
+
+      color: #9eaaa2;
+
+      text-align: center;
+
+      padding: 32px 20px;
+
+      font-size: 14px;
+    }
+
+
+    footer strong {
+
+      color: #dce4de;
+    }
+
+
+    /* =========================================
+       RESPONSIVIDADE
+    ========================================= */
+
+    @media (max-width: 850px) {
 
       .kpis {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
     }
@@ -328,19 +644,44 @@
     @media (max-width: 550px) {
 
       header {
-        padding: 50px 15px;
+
+        padding: 55px 18px;
       }
 
+
+      header h1 {
+
+        font-size: 2.2rem;
+      }
+
+
       .kpis {
+
         grid-template-columns: 1fr;
       }
 
+
       .objective-content {
+
         flex-direction: column;
       }
 
+
+      .objective {
+
+        padding: 23px;
+      }
+
+
+      .technologies {
+
+        padding: 23px;
+      }
+
+
       .dashboard {
-        padding: 30px 20px;
+
+        padding: 35px 20px;
       }
 
     }
@@ -353,9 +694,9 @@
 <body>
 
 
-  <!-- =========================
+  <!-- =========================================
        CABEÇALHO
-  ========================== -->
+  ========================================== -->
 
   <header>
 
@@ -363,63 +704,93 @@
       PROJETO G1 · TEMA 3
     </div>
 
+
     <h1>
       🔥 Análise de <span>Queimadas</span> no Brasil
     </h1>
 
+
     <p class="subtitle">
-      Análise dos focos de queimadas no Brasil entre
-      2015 e 2024, identificando padrões regionais,
-      sazonalidade e períodos críticos.
+
+      Uma análise dos focos de queimadas no Brasil
+      entre 2015 e 2024, identificando padrões
+      regionais, sazonalidade e períodos críticos.
+
     </p>
 
+
     <p class="student">
+
       Linguagens de Programação · Professor Alexandre Neves Louzada
+
       <br>
-      Aluno: <strong>Luis Fernando Dantas Carvalho</strong>
+
+      Aluno:
+      <strong>
+        Luis Fernando Dantas Carvalho
+      </strong>
+
     </p>
 
   </header>
 
 
-  <!-- =========================
+  <!-- =========================================
        CONTEÚDO
-  ========================== -->
+  ========================================== -->
 
   <main>
 
     <div class="container">
 
 
-      <!-- OBJETIVO -->
+      <!-- =========================
+           SOBRE O PROJETO
+      ========================== -->
 
       <section class="section">
 
         <div class="section-title">
-          <h2>🎯 Sobre o projeto</h2>
-          <p>Entenda o objetivo da análise</p>
+
+          <h2>
+            🎯 Sobre o projeto
+          </h2>
+
+          <p>
+            Entenda o objetivo da análise
+          </p>
+
         </div>
+
 
         <div class="objective">
 
           <div class="objective-content">
 
+
             <div class="objective-icon">
               🔥
             </div>
 
+
             <div>
 
-              <h3>Objetivo</h3>
+              <h3>
+                Objetivo
+              </h3>
+
 
               <p>
+
                 Investigar a evolução dos focos de queimadas
                 no Brasil entre 2015 e 2024, identificando
                 padrões regionais, sazonalidade, biomas e
                 períodos críticos.
+
               </p>
 
             </div>
+
 
           </div>
 
@@ -428,18 +799,29 @@
       </section>
 
 
-      <!-- RESULTADOS -->
+      <!-- =========================
+           RESULTADOS
+      ========================== -->
 
       <section class="section">
 
         <div class="section-title">
-          <h2>📊 Principais resultados</h2>
-          <p>Resumo dos dados analisados</p>
+
+          <h2>
+            📊 Principais resultados
+          </h2>
+
+          <p>
+            Resumo dos dados analisados
+          </p>
+
         </div>
 
 
         <div class="kpis">
 
+
+          <!-- KPI 1 -->
 
           <div class="kpi">
 
@@ -454,6 +836,8 @@
           </div>
 
 
+          <!-- KPI 2 -->
+
           <div class="kpi">
 
             <div class="kpi-label">
@@ -466,6 +850,8 @@
 
           </div>
 
+
+          <!-- KPI 3 -->
 
           <div class="kpi">
 
@@ -480,6 +866,8 @@
           </div>
 
 
+          <!-- KPI 4 -->
+
           <div class="kpi">
 
             <div class="kpi-label">
@@ -493,6 +881,8 @@
           </div>
 
 
+          <!-- KPI 5 -->
+
           <div class="kpi">
 
             <div class="kpi-label">
@@ -505,6 +895,8 @@
 
           </div>
 
+
+          <!-- KPI 6 -->
 
           <div class="kpi">
 
@@ -524,13 +916,22 @@
       </section>
 
 
-      <!-- TECNOLOGIAS -->
+      <!-- =========================
+           TECNOLOGIAS
+      ========================== -->
 
       <section class="section">
 
         <div class="section-title">
-          <h2>💻 Tecnologias utilizadas</h2>
-          <p>Ferramentas utilizadas no desenvolvimento</p>
+
+          <h2>
+            💻 Tecnologias utilizadas
+          </h2>
+
+          <p>
+            Ferramentas utilizadas no desenvolvimento
+          </p>
+
         </div>
 
 
@@ -565,7 +966,9 @@
       </section>
 
 
-      <!-- DASHBOARD -->
+      <!-- =========================
+           DASHBOARD
+      ========================== -->
 
       <section class="section">
 
@@ -575,11 +978,15 @@
             📈 Explore os dados
           </h2>
 
+
           <p>
+
             Acesse o dashboard interativo para visualizar
             gráficos e informações detalhadas sobre as
             queimadas no Brasil.
+
           </p>
+
 
           <a
             class="button"
@@ -587,7 +994,9 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
             🚀 Abrir Dashboard
+
           </a>
 
         </div>
@@ -595,13 +1004,17 @@
       </section>
 
 
-      <!-- OBSERVAÇÃO -->
+      <!-- =========================
+           OBSERVAÇÃO
+      ========================== -->
 
       <section class="section">
 
         <div class="notice">
 
-          <strong>📌 Observação:</strong>
+          <strong>
+            📌 Observação:
+          </strong>
 
           Os dados utilizados neste projeto são simulados
           e foram fornecidos para fins acadêmicos.
@@ -616,9 +1029,9 @@
   </main>
 
 
-  <!-- =========================
+  <!-- =========================================
        RODAPÉ
-  ========================== -->
+  ========================================== -->
 
   <footer>
 
@@ -627,7 +1040,13 @@
     </p>
 
     <p>
-      <strong>Linguagens de Programação</strong> · 2026
+
+      <strong>
+        Linguagens de Programação
+      </strong>
+
+      · 2026
+
     </p>
 
   </footer>
