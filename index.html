@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,9 +9,7 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>
-    Análise de Queimadas no Brasil — Projeto G1
-  </title>
+  <title>Análise de Queimadas no Brasil — Projeto G1</title>
 
 
   <style>
@@ -25,14 +24,11 @@
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-
       font-family:
         Arial,
         Helvetica,
@@ -54,25 +50,17 @@
         #f5f7f4;
 
       color: #202520;
-
       line-height: 1.6;
-
     }
-
 
     a {
       color: inherit;
     }
 
-
     .container {
-
       width: 90%;
-
-      max-width: 1050px;
-
+      max-width: 950px;
       margin: 0 auto;
-
     }
 
 
@@ -81,21 +69,14 @@
     ===================================================== */
 
     header {
-
       padding: 65px 0 45px;
-
-      border-bottom:
-        1px solid #dfe5df;
-
+      border-bottom: 1px solid #dfe5df;
     }
 
-
     .project-tag {
-
       display: inline-block;
 
-      padding:
-        6px 13px;
+      padding: 6px 13px;
 
       border-radius: 20px;
 
@@ -104,16 +85,12 @@
       color: #285943;
 
       font-size: 13px;
-
       font-weight: bold;
 
       margin-bottom: 18px;
-
     }
 
-
     header h1 {
-
       max-width: 850px;
 
       font-size:
@@ -124,19 +101,13 @@
       color: #1e3527;
 
       margin-bottom: 18px;
-
     }
-
 
     header h1 span {
-
       color: #c65d0a;
-
     }
 
-
     .subtitle {
-
       max-width: 720px;
 
       color: #687169;
@@ -144,34 +115,26 @@
       font-size: 1.08rem;
 
       margin-bottom: 25px;
-
     }
 
-
     .student-info {
-
       color: #737b75;
 
       font-size: 14px;
 
       line-height: 1.8;
-
     }
 
-
     .student-info strong {
-
       color: #38463d;
-
     }
 
 
     /* =====================================================
-       BOTÕES DO CABEÇALHO
+       BOTÕES
     ===================================================== */
 
     .header-buttons {
-
       display: flex;
 
       flex-wrap: wrap;
@@ -179,16 +142,12 @@
       gap: 10px;
 
       margin-top: 25px;
-
     }
 
-
     .button {
-
       display: inline-block;
 
-      padding:
-        10px 17px;
+      padding: 10px 17px;
 
       border-radius: 8px;
 
@@ -198,84 +157,75 @@
 
       font-weight: bold;
 
-      transition: 0.2s;
-
+      transition:
+        0.2s ease;
     }
-
 
     .button-primary {
-
       background: #285943;
-
       color: white;
-
     }
 
-
     .button-primary:hover {
-
       background: #214a36;
 
       transform: translateY(-2px);
-
     }
 
-
     .button-secondary {
-
       background: white;
 
       color: #285943;
 
-      border:
-        1px solid #ccd8ce;
-
+      border: 1px solid #ccd8ce;
     }
 
-
     .button-secondary:hover {
-
       background: #f0f4f1;
 
       transform: translateY(-2px);
-
     }
 
 
     /* =====================================================
-       KPI
+       INDICADORES
     ===================================================== */
 
     .kpis {
-
       display: grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(3, 1fr);
 
-      gap: 12px;
+      gap: 14px;
 
       padding: 30px 0;
-
     }
 
-
     .kpi {
-
       background: white;
 
-      border:
-        1px solid #e1e6e1;
+      border: 1px solid #e1e6e1;
 
       border-radius: 10px;
 
       padding: 20px;
 
+      transition:
+        0.2s ease;
     }
 
+    .kpi:hover {
+      transform: translateY(-2px);
+
+      border-color: #c9d8cc;
+
+      box-shadow:
+        0 5px 15px
+        rgba(40, 89, 67, 0.06);
+    }
 
     .kpi-number {
-
       font-size: 1.65rem;
 
       font-weight: bold;
@@ -283,25 +233,12 @@
       color: #285943;
 
       margin-bottom: 4px;
-
     }
-
-
-    .kpi:nth-child(1) .kpi-number,
-    .kpi:nth-child(3) .kpi-number,
-    .kpi:nth-child(5) .kpi-number {
-
-      color: #c65d0a;
-
-    }
-
 
     .kpi-label {
-
       font-size: 13px;
 
       color: #737b75;
-
     }
 
 
@@ -310,48 +247,34 @@
     ===================================================== */
 
     main {
-
       padding-bottom: 50px;
-
     }
 
-
     section {
-
       padding: 38px 0;
 
       border-top:
         1px solid #e1e6e1;
-
     }
-
 
     section:first-child {
-
       border-top: none;
-
     }
 
-
     .section-title {
-
       font-size: 1.45rem;
 
       color: #1e3527;
 
       margin-bottom: 6px;
-
     }
 
-
     .section-description {
-
       color: #737b75;
 
       font-size: 14px;
 
       margin-bottom: 22px;
-
     }
 
 
@@ -360,18 +283,14 @@
     ===================================================== */
 
     .problem {
-
       max-width: 850px;
 
       color: #4e5751;
 
       font-size: 16px;
-
     }
 
-
     .questions {
-
       display: grid;
 
       grid-template-columns:
@@ -380,12 +299,9 @@
       gap: 12px;
 
       margin-top: 22px;
-
     }
 
-
     .question {
-
       background: white;
 
       border:
@@ -399,17 +315,24 @@
 
       font-size: 14px;
 
+      transition:
+        0.2s ease;
     }
 
+    .question:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.04);
+    }
 
     .question strong {
-
       display: block;
 
       color: #285943;
 
       margin-bottom: 5px;
-
     }
 
 
@@ -418,7 +341,6 @@
     ===================================================== */
 
     .objective {
-
       background: white;
 
       border:
@@ -432,6 +354,9 @@
 
       color: #4e5751;
 
+      box-shadow:
+        0 3px 12px
+        rgba(0, 0, 0, 0.02);
     }
 
 
@@ -440,19 +365,15 @@
     ===================================================== */
 
     .discoveries {
-
       display: grid;
 
       grid-template-columns:
         repeat(2, 1fr);
 
       gap: 12px;
-
     }
 
-
     .discovery {
-
       background: white;
 
       border:
@@ -465,26 +386,30 @@
 
       padding: 18px;
 
+      transition:
+        0.2s ease;
     }
 
+    .discovery:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.04);
+    }
 
     .discovery strong {
-
       color: #285943;
 
       display: block;
 
       margin-bottom: 4px;
-
     }
 
-
     .discovery p {
-
       color: #626b65;
 
       font-size: 14px;
-
     }
 
 
@@ -493,20 +418,15 @@
     ===================================================== */
 
     .technologies {
-
       display: flex;
 
       flex-wrap: wrap;
 
       gap: 9px;
-
     }
 
-
     .technology {
-
-      padding:
-        8px 13px;
+      padding: 8px 13px;
 
       background: white;
 
@@ -521,6 +441,16 @@
 
       font-weight: bold;
 
+      transition:
+        0.2s ease;
+    }
+
+    .technology:hover {
+      border-color: #285943;
+
+      color: #285943;
+
+      transform: translateY(-2px);
     }
 
 
@@ -529,19 +459,15 @@
     ===================================================== */
 
     .features {
-
       display: grid;
 
       grid-template-columns:
         repeat(2, 1fr);
 
       gap: 10px;
-
     }
 
-
     .feature {
-
       padding: 15px;
 
       background: #edf3ee;
@@ -552,11 +478,17 @@
 
       font-size: 14px;
 
+      transition:
+        0.2s ease;
     }
 
+    .feature:hover {
+      background: #e5eee7;
+
+      transform: translateY(-2px);
+    }
 
     .feature::before {
-
       content: "✓";
 
       color: #285943;
@@ -564,7 +496,6 @@
       font-weight: bold;
 
       margin-right: 8px;
-
     }
 
 
@@ -573,27 +504,19 @@
     ===================================================== */
 
     .methodology {
-
       max-width: 850px;
 
       color: #555e58;
-
     }
 
-
     .methodology ol {
-
       margin-left: 20px;
 
       margin-top: 15px;
-
     }
 
-
     .methodology li {
-
       margin-bottom: 8px;
-
     }
 
 
@@ -602,7 +525,6 @@
     ===================================================== */
 
     .dashboard {
-
       background:
         linear-gradient(
           135deg,
@@ -618,42 +540,35 @@
 
       margin-top: 10px;
 
+      box-shadow:
+        0 8px 25px
+        rgba(40, 89, 67, 0.12);
     }
 
-
     .dashboard h2 {
-
       color: white;
 
       margin-bottom: 8px;
-
     }
 
-
     .dashboard p {
-
       color: #dce8df;
 
       max-width: 650px;
 
       margin-bottom: 20px;
-
     }
 
-
     .dashboard .button {
-
       background: white;
 
       color: #285943;
-
     }
 
-
     .dashboard .button:hover {
-
       background: #f1f5f2;
 
+      transform: translateY(-2px);
     }
 
 
@@ -662,7 +577,6 @@
     ===================================================== */
 
     .notice {
-
       background: #fffaf5;
 
       border-left:
@@ -675,14 +589,10 @@
       color: #666;
 
       font-size: 14px;
-
     }
 
-
     .notice strong {
-
       color: #414141;
-
     }
 
 
@@ -691,7 +601,6 @@
     ===================================================== */
 
     footer {
-
       border-top:
         1px solid #dce2dc;
 
@@ -702,14 +611,10 @@
       font-size: 13px;
 
       text-align: center;
-
     }
 
-
     footer strong {
-
       color: #425047;
-
     }
 
 
@@ -720,24 +625,16 @@
     @media (max-width: 850px) {
 
       .kpis {
-
         grid-template-columns:
           repeat(2, 1fr);
-
       }
-
 
       .questions {
-
         grid-template-columns: 1fr;
-
       }
 
-
       .discoveries {
-
         grid-template-columns: 1fr;
-
       }
 
     }
@@ -746,46 +643,33 @@
     @media (max-width: 600px) {
 
       .container {
-
         width: 92%;
-
       }
-
 
       header {
-
         padding: 45px 0 35px;
-
       }
-
 
       .kpis {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .features {
-
         grid-template-columns: 1fr;
-
       }
 
-
       .header-buttons {
-
         flex-direction: column;
 
         align-items: flex-start;
-
       }
 
-
       header h1 {
-
         font-size: 2.2rem;
+      }
 
+      .dashboard {
+        padding: 25px;
       }
 
     }
@@ -1369,7 +1253,7 @@
 
   <!-- =====================================================
        RODAPÉ
-  ====================================================== -->
+  ===================================================== -->
 
   <footer>
 
@@ -1397,3 +1281,4 @@
 </body>
 
 </html>
+```
