@@ -1,57 +1,427 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Projeto G1 — Análise de Queimadas no Brasil</title>
+
   <style>
-    body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 40px 20px; line-height: 1.6; }
-    h1 { margin-bottom: 8px; }
-    .card { border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; }
-    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-    .kpi strong { display: block; font-size: 1.4rem; }
-    a.button { display: inline-block; padding: 10px 16px; background: #222; color: white; text-decoration: none; border-radius: 8px; margin-right: 8px; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, #3b1d0f 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #35140c 0%, transparent 30%),
+        #0f1115;
+      color: #f5f5f5;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      padding: 70px 0 50px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: rgba(255, 98, 0, 0.12);
+      border: 1px solid rgba(255, 98, 0, 0.35);
+      color: #ff8a3d;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #ffb347, #ff5e00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: #b8b8b8;
+      font-size: 1.05rem;
+    }
+
+    .professor {
+      margin-top: 8px;
+      color: #888;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 94, 0, 0.15),
+        rgba(255, 179, 71, 0.04)
+      );
+
+      border: 1px solid rgba(255, 120, 40, 0.2);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 25px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .hero h2 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #c9c9c9;
+      max-width: 850px;
+    }
+
+    /* CARDS */
+
+    .card {
+      background: rgba(25, 27, 32, 0.85);
+      border: 1px solid #292c33;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 25px 0;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    /* KPIs */
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .kpi {
+      padding: 22px;
+      border-radius: 16px;
+      background: linear-gradient(
+        145deg,
+        #20232a,
+        #181a1f
+      );
+      border: 1px solid #30343c;
+      transition: 0.3s;
+    }
+
+    .kpi:hover {
+      transform: translateY(-5px);
+      border-color: #ff6b1a;
+      box-shadow: 0 10px 30px rgba(255, 94, 0, 0.12);
+    }
+
+    .kpi strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #ff8a3d;
+      margin-bottom: 5px;
+    }
+
+    .kpi span {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    /* TECNOLOGIAS */
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech {
+      padding: 9px 15px;
+      border-radius: 50px;
+      background: #23262d;
+      border: 1px solid #343841;
+      color: #ddd;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .tech:hover {
+      background: #ff5e00;
+      border-color: #ff5e00;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* DASHBOARD */
+
+    .dashboard {
+      text-align: center;
+      padding: 40px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 94, 0, 0.15),
+          rgba(255, 179, 71, 0.05)
+        );
+    }
+
+    .dashboard p {
+      color: #bbb;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      background: linear-gradient(135deg, #ff6a00, #ff3d00);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 8px 25px rgba(255, 80, 0, 0.25);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 80, 0, 0.4);
+    }
+
+    /* OBSERVAÇÃO */
+
+    .observation {
+      border-left: 4px solid #ff6a00;
+    }
+
+    .observation p {
+      color: #aaa;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #999;
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 45px 0 30px;
+      }
+
+      .hero,
+      .card {
+        padding: 22px;
+      }
+
+      .kpis {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .kpi strong {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <h1>🔥 Análise de Queimadas no Brasil</h1>
-  <p><strong>Projeto G1 — Tema 3</strong></p>
-  <p> LINGUAGENS DE PROGRAMAÇÃO</p>
-  <p>Professor: Alexandre Neves Louzada</p>
-  <p>Aluno: Luis Fernando Dantas Carvalho </p>
 
-  <div class="card">
-    <h2>Objetivo</h2>
-    <p>Investigar a evolução dos focos de queimadas no Brasil entre 2015 e 2024,
-    identificando padrões regionais, sazonalidade, biomas e períodos críticos.</p>
+  <div class="container">
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+      <div class="badge">
+        🔥 PROJETO G1 · TEMA 3
+      </div>
+
+      <h1>Análise de Queimadas no Brasil</h1>
+
+      <p>
+        Uma análise exploratória dos focos de queimadas
+        entre 2015 e 2024.
+      </p>
+
+      <p class="professor">
+        Linguagens de Programação · Professor Alexandre Neves Louzada
+      </p>
+
+      <p class="professor">
+        Desenvolvido por <strong>Luis Fernando Dantas Carvalho</strong>
+      </p>
+
+    </header>
+
+
+    <!-- OBJETIVO -->
+
+    <section class="hero">
+
+      <h2>🎯 Objetivo do Projeto</h2>
+
+      <p>
+        Investigar a evolução dos focos de queimadas no Brasil entre
+        2015 e 2024, identificando padrões regionais, sazonalidade,
+        biomas e períodos críticos.
+      </p>
+
+    </section>
+
+
+    <!-- RESULTADOS -->
+
+    <section class="card">
+
+      <h2>📊 Principais Resultados</h2>
+
+      <div class="kpis">
+
+        <div class="kpi">
+          <strong>61.803</strong>
+          <span>Focos registrados</span>
+        </div>
+
+        <div class="kpi">
+          <strong>24.874,64</strong>
+          <span>km² de área atingida</span>
+        </div>
+
+        <div class="kpi">
+          <strong>GO</strong>
+          <span>Estado líder</span>
+        </div>
+
+        <div class="kpi">
+          <strong>Nordeste</strong>
+          <span>Região líder</span>
+        </div>
+
+        <div class="kpi">
+          <strong>Outubro</strong>
+          <span>Mês crítico</span>
+        </div>
+
+        <div class="kpi">
+          <strong>0,815</strong>
+          <span>Correlação seca × focos</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TECNOLOGIAS -->
+
+    <section class="card">
+
+      <h2>💻 Tecnologias Utilizadas</h2>
+
+      <div class="tech-list">
+
+        <div class="tech">🐍 Python</div>
+        <div class="tech">🐼 Pandas</div>
+        <div class="tech">📊 Plotly</div>
+        <div class="tech">🌐 Streamlit</div>
+        <div class="tech">🔧 GitHub</div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section class="card dashboard">
+
+      <h2>📈 Dashboard Interativo</h2>
+
+      <p>
+        Explore os dados do projeto através do dashboard interativo,
+        com gráficos e análises sobre a distribuição das queimadas
+        no Brasil.
+      </p>
+
+      <a
+        class="button"
+        href="https://queimadas-brasil-g1.streamlit.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🚀 Abrir Dashboard
+      </a>
+
+    </section>
+
+
+    <!-- OBSERVAÇÃO -->
+
+    <section class="card observation">
+
+      <h2>📌 Observação</h2>
+
+      <p>
+        Os dados utilizados neste projeto são simulados e foram
+        fornecidos para fins acadêmicos.
+      </p>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+      <p>
+        Projeto G1 — Análise de Queimadas no Brasil
+      </p>
+
+      <p>
+        <strong>Linguagens de Programação</strong> · 2026
+      </p>
+
+    </footer>
+
   </div>
 
-  <div class="card">
-    <h2>Principais resultados</h2>
-    <div class="kpis">
-      <div class="kpi"><strong>61.803</strong>focos</div>
-      <div class="kpi"><strong>24.874,64 km²</strong>área atingida</div>
-      <div class="kpi"><strong>GO</strong>estado líder</div>
-      <div class="kpi"><strong>Nordeste</strong>região líder</div>
-      <div class="kpi"><strong>Outubro</strong>mês crítico</div>
-      <div class="kpi"><strong>0,815</strong>correlação seca × focos</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Tecnologias</h2>
-    <p>Python · Pandas · Plotly · Streamlit · GitHub</p>
-  </div>
-
-  <div class="card">
-    <h2>Dashboard</h2>
-    <p>Depois de publicar no Streamlit, substitua o endereço abaixo pelo link real do seu dashboard.</p>
-    <a class="button" href="https://queimadas-brasil-g1.streamlit.app/" target="_blank">Abrir Streamlit</a>
-  </div>
-
-  <div class="card">
-    <h2>Observação</h2>
-    <p>Os dados utilizados são simulados e foram fornecidos para o projeto acadêmico.</p>
-  </div>
 </body>
 </html>
+```
