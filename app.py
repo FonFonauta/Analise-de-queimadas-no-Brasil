@@ -24,6 +24,11 @@ st.markdown(
     "Dashboard analítico dos focos de queimadas no período de **2015 a 2024**, "
     "com análise temporal, regional, estadual, por bioma, sazonalidade e risco."
 )
+st.markdown(
+    "Linguagens de Programação "
+    "Professor: Alexandre Neves Louzada "
+    "Aluno: Luis Fernando Dantas Carvalho "
+)
 
 with st.sidebar:
     st.header("Filtros")
