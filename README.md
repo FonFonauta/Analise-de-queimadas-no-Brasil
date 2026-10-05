@@ -1,5 +1,8 @@
 # Projeto G1 — Tema 3: Análise de Queimadas no Brasil
-
+ ```LINGUAGENS DE PROGRAMAÇÃO
+ Professor: Alexandre Neves Louzada
+ Aluno: Luis Fernando Dantas Carvalho
+```
 Projeto de análise e visualização de dados desenvolvido com **Python, Pandas, Plotly e Streamlit**, conforme as exigências do enunciado.
 
 > **Importante:** o dataset fornecido é simulado. As conclusões servem para fins acadêmicos e não representam estatísticas oficiais de queimadas.
@@ -166,7 +169,3 @@ Uma apresentação curta pode seguir esta ordem:
 9. Conclusão;
 10. Demonstração dos filtros do dashboard.
 
-=======
-# Analise-de-queimadas-no-Brasil
-Tema 3 — Análise de Queimadas no Brasil
->>>>>>> 671e726646c9fd8968a4ce70090c5f89670dac04
