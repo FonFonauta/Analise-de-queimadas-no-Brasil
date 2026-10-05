@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Projeto G1 — Tema 3: Análise de Queimadas no Brasil
 
 Projeto de análise e visualização de dados desenvolvido com **Python, Pandas, Plotly e Streamlit**, conforme as exigências do enunciado.
