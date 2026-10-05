@@ -26,13 +26,12 @@ st.markdown(
 )
 st.markdown(
     "Linguagens de Programação "
-    )
-    st.markdown(
+)
+st.markdown(
     "Professor: Alexandre Neves Louzada "
-        )
+)
     st.markdown(
     "Aluno: Luis Fernando Dantas Carvalho "
-)
 )
 with st.sidebar:
     st.header("Filtros")
