@@ -33,7 +33,7 @@ st.markdown(
     st.markdown(
     "Aluno: Luis Fernando Dantas Carvalho "
 )
-
+)
 with st.sidebar:
     st.header("Filtros")
     anos = st.multiselect("Ano", sorted(df["ano"].unique()), default=sorted(df["ano"].unique()))
